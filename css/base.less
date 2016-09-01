@@ -369,15 +369,19 @@
                 width:100%;
                 position:relative;
                 overflow:hidden;
+                font-size:0;
                 .company{
-                    height:100px;
-                    padding:10px 15px;
-                    line-height:40px;
+                    display:inline-block;
+                    width:23%;
+                    min-width:200px;
+                    margin:20px 5px;
+                    padding:10px 5px;
+                    font-size:14px;
                     border:solid @out-border-color 1px;
-                    margin:0 15px 30px;
-                    float:left;
+                    position:relative;
                     .result{
-                        float:right;
+                        position:absolute;
+                        right:10px;
                         color:#5f9afc;
                     }
                 }
