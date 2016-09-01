@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>后台管理页面</title>
+</head>
+
+<body>
+     <div class="wrapper_content">
+           <div class="infor">
+               <div class="col-md-4 input-lable-box label_container">
+                   <label>查&nbsp;&nbsp;询&nbsp;&nbsp;代&nbsp;理&nbsp;人：</label>
+               </div>
+               
+                <div class="col-md-6 input-input-box input_container">
+                    <input type="text" class="form-control" placeholder="请输入要查询的代理人姓名" id="search">
+                    
+                    <table id="sheet">
+                        <tbody>
+                            <tr><td>阿尔法1</td></tr>
+                            <tr><td>阿尔法2</td></tr>
+                            <tr><td>阿尔法3</td></tr>
+                            <tr><td>阿尔法4</td></tr>
+                            <tr><td>阿尔法5</td></tr>
+                        </tbody>
+                    </table>
+                </div>  
+            </div>
+            
+            <div class="infor">
+               <div class="col-md-4 input-lable-box label_container">
+                   <label>所属销售员姓名：</label>
+               </div>
+                <div class="col-md-6 input-input-box input_container">
+                张三丰
+                </div>                
+            </div>
+            
+            <div class="infor">
+               <div class="col-md-4 input-lable-box label_container">
+                   <label>所属销售用户名：</label>
+               </div>
+                <div class="col-md-6 input-input-box input_container">
+                张三丰
+                </div>                
+            </div>
+
+            <div class="modify_icon">
+
+                <button type="button" class="button_modify" data-toggle="modal" data-target="#dlr_add_model" >
+                            添加
+                        </button>
+                <button type="button" class="button_modify" style="background-color:#bd3532"  data-toggle="modal" data-target="#change_salesmen" data-change-button="btn" disabled>
+                            更改
+                        </button>
+                <button type="button" class="button_modify" style="background-color:#dd932f"  data-toggle="modal" data-target="#change" data-change-button="btn" disabled>
+                            离职
+                        </button>
+                <button type="button" class="button_modify"  data-toggle="modal" data-target="#myModal" data-change-button="btn" disabled >
+                            代理转销售
+                        </button>
+            </div>            
+        </div>
+<!---------------------------------------添加代理模态框---------------------------------------------------------------->
+        <div class="modal fade bs-example-modal-sm" id="dlr_add_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      添加代理人
+                    </h4>
+                 </div>
+                 <div class="modal-body">
+                   
+                    <form name="form3" >
+                    <input type="text" class="form-control" placeholder="请输入要添加代理的用户名" id="search"><br/>
+	    	            <select class ="modify_model" id = "companys1">
+	    	               <option value="0">选择分公司</option>
+                           <option value="1">绿能宝北京</option>
+                           <option value="2">绿能宝苏州</option>
+                           <option value="3">绿能宝上海</option>
+                           <option value="4">绿能宝浙江</option>
+                           <option value="5">绿能宝大庆</option>
+	    	            </select><br/><br/>
+	    	            <select class ="modify_model" id = "salesmen1">
+	    	                <option>选择对应销售</option>
+	    	            </select><br/><br/>
+	    	            <input type="text" class="form-control" placeholder="所选销售的用户名" disabled="disabled">
+                        
+	                </form>
+                   
+                 </div>
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!---------------------------------------添加代理模态框----------------------------------------------------------------->
+<!---------------------------代理更改模态框------------------------------------------------->
+        <div class="modal fade bs-example-modal-sm" id="change_salesmen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      更改代理
+                    </h4>
+                 </div>
+                 
+                 <div class="modal-body">
+                   <form name="form3" >
+	    	            <select class ="modify_model" id = "companys2">
+	    	               <option value="0">选择分公司</option>
+                           <option value="1">绿能宝北京</option>
+                           <option value="2">绿能宝苏州</option>
+                           <option value="3">绿能宝上海</option>
+                           <option value="4">绿能宝浙江</option>
+                           <option value="5">绿能宝大庆</option>
+	    	            </select><br/><br/>
+	    	            <select class ="modify_model" id = "salesmen2">
+	    	                <option>选择对应销售</option>
+	    	            </select><br/><br/>
+	    	            <input type="text" class="form-control" placeholder="所选销售的用户名" disabled="disabled">
+	                </form>
+                 </div>
+
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!---------------------------代理更改模态框-------------------------------------------------> 
+<!---------------------------设离职模态框------------------------------------------------->
+        <div class="modal fade bs-example-modal-sm" id="change" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      代理离职
+                    </h4>
+                 </div>
+                 <div class="modal-body">
+                   <p>确定要将其改为离职状态吗？</p>
+                 </div>
+
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!---------------------------设离职模态框------------------------------------------------->  
+<!---------------------------代理转销售模态框------------------------------------------------->
+        <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      代理转销售
+                    </h4>
+                 </div>
+                 <div class="modal-body">
+                   
+                       <select class="modify_model">
+                           <option>选择分公司</option>
+                           <option>绿能宝北京</option>
+                           <option>绿能宝苏州</option>
+                           <option>绿能宝上海</option>
+                           <option>绿能宝浙江</option>
+                           <option>绿能宝大庆</option>
+                       </select>
+                   
+                 </div>
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!---------------------------代理转销售模态框------------------------------------------------->
+ 
+
+
+</body>
+
+</html>

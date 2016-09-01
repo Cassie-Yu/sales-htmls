@@ -1,0 +1,194 @@
+/*
+ * 重写样式和全局默认样式
+ */
+
+
+
+div{
+//     border: solid #aaa 1px;   
+}
+
+
+
+/**
+ * 重写bootstrap的样式----开始
+ */
+.none-a;
+//去除输入框的圆角样式
+.input-group-addon{
+    border-radius: 0px;
+}
+//去除form表单的样式
+.form-control{
+    border-radius: 0px;
+}
+//去除表单中各种样式的圆角
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+//分页样式,padding框大小
+.pagination>li>a{
+    padding: 8px 14px;
+}
+//分页样式,第一个的圆角--重写
+.pagination>li:first-child>a{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+//分页样式最后一个圆角--重写
+.pagination>li:last-child>a{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+//去除栅格布局中的padding样式
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+//去除模态框圆角样式
+.modal-content{
+    border-radius: 0px;
+}
+//调整模态框距离头部的位置
+.modal-dialog{
+    margin: 120px auto;
+}
+//重置抬头的字体大小及粗细程度
+.modal-title{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+//重写bootstrap的标签页样式
+.nav-tabs.nav-justified>li>a{
+    border-radius: 0px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: @a-hover-color;
+}
+/**********************重写bootstrap end*******************************/
+
+
+/**
+*重写buttons样式----开始
+*/
+//.button-border, .button-border-thin, .button-border-thick{
+//    border-width: 1px;
+//}
+
+//.main {
+//    display: block;
+//    width: 100%;
+//    height: 200px;
+////    background-color: aquamarine;
+//}
+/************************重写button end*****************************/
+
+
+
+/**
+ * 常用样式封装----开始
+ */
+//同列对齐方式
+.tc{
+    display: table-cell;
+    vertical-align: top;
+}
+//去除a标签的样式
+.none-a{
+    a{
+        text-decoration: none;
+        color: @font-color;
+    }
+    a:hover{
+        text-decoration: none;
+        color: @font-color;
+    }
+    a:linke{
+        text-decoration: none;
+        color: @font-color;
+    }
+    a:active{
+        text-decoration: none;
+        color: @font-color;
+    }
+    a:visited{
+        text-decoration: none;
+        color: @font-color;
+    }
+}
+// 定义过度效果的样式
+.transition{
+	transition: height 1s, width 1s, box-shadow 1000ms, -moz-box-shadow 1000ms, -webkit-box-shadow 1000ms,color 500ms,border-color 1000ms,background-color 500ms,top 500ms,opacity 500ms;
+	-webkit-transition: height 1s, width 1s, box-shadow 1000ms, -moz-box-shadow 1000ms, -webkit-box-shadow 1000ms,color 500ms,border-color 1000ms,background-color 500ms,top 500ms,opacity 500ms;
+	-moz-transition: height 1s, width 1s, box-shadow 1000ms, -moz-box-shadow 1000ms, -webkit-box-shadow 1000ms,color 500ms,border-color 1000ms,background-color 500ms,top 500ms,opacity 500ms;
+}
+/**********************重写bootstrap end*******************************/
+
+
+/**
+ * 全局样式设定----开始
+ */
+table{
+    table-layout: fixed;
+}
+td{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+
+//body start
+body{
+    background-color: @base-background-color;
+    font-family: "Microsoft YaHei","WenQuanYi Micro Hei",SimHei,tahoma,sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    color: @font-color;
+}
+
+//设置模特框中的表单样式开始
+.form-input-box{
+    padding-bottom: 5px;
+    .input-lable-box{
+        text-align: right;
+        .input-lable{
+//            line-height: 34px;
+            padding: 6px 12px;
+            display: block;
+        }
+    }
+    .input-msg-box{
+        padding-top: 5px;
+        min-height: 25px;
+        color: @input-error-msg-color;
+        display: block;
+        .input-error-msg{
+            margin-bottom: 0px;
+            font-weight: 400;
+        }
+    }
+    
+    .remove-lable-box{
+//        text-align: right;
+        .input-lable{
+//            line-height: 34px;
+            padding: 6px 12px;
+            display: block;
+        }
+    }
+    .error{
+        border-color: @input-error-msg-color;
+    }
+}
+.modal-button{
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+}
+/**********************全局样式设定 end*******************************/

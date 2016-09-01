@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>销售管理系统</title>
+</head>
+
+<body>
+    <div class="title-search-div row">
+        <h3 class="menu-title">销售管理</h3>
+    </div>
+    <div class="auto-lines-container">
+    <div class="col-md-4 auto-line-box"> 
+       <div class="scroll" >  
+         <div class="sroll_top">
+                <div class="scroll_top_message" >
+                    <h5 class="lines-title-item"><strong>公司信息</strong></h5>
+                </div> 
+                <div class="scroll_top_tianjia" >
+                    <i class="icon icon-tianjia line-icon icon-primary" data-toggle="icon-tag" data-placement="bottom" title="添加" data-modal="addFgs"></i>
+                </div>
+         </div>
+        <div >
+             <dl style="border:0px">        <!--在css文件里定义的样式与之前定义的有冲突-->
+                <dd data-refresh-item="sales" data-fgs-value-id="100" data-fgs-value-name="江苏绿能宝融资租赁有限公司">
+                    <labal class="lines-item">销售1</labal>
+                   
+                </dd>
+                <dd data-refresh-item="sales">
+                    <labal class="lines-item">销售2</labal>
+                  
+                </dd>
+                <dd data-refresh-item="sales">
+                    <labal class="lines-item">销售3</labal>
+                    <!--                    <i class="icon icon-xiangqing line-icon icon-primary"></i>-->
+                  
+                </dd>
+                <dd data-refresh-item="sales">
+                    <labal class="lines-item">销售4</labal>
+                    <!--                    <i class="icon icon-xiangqing line-icon icon-primary"></i>-->
+                    
+                </dd>
+
+            </dl>
+           </div>
+         </div>
+       </div>      
+    
+       
+        <div id="sales-sales-box" class="col-md-4 auto-line-box">
+            <dl>
+                <dt>销售信息</dt>
+            </dl>
+        </div>
+        <div id="sales-act-box" class="col-md-4 auto-line-box">
+            <dl>
+                <dt>代理人信息</dt>
+            </dl>
+        </div>
+        
+    </div>
+
+
+
+    <!--    模态框开始-->
+    <div class="modal fade" id="addFgsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form data-form-valid="valid" action="/views/sales.html">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">添加分公司</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row form-input-box">
+                            <div class="col-md-2 input-lable-box">
+                                <lable class="input-lable">用户名</lable>
+                            </div>
+                            <div class="col-md-9 input-input-box">
+                                <input type="text" class="form-control input-input" datatype="s5-16" errormsg="昵称至少5个字符,最多16个字符！" sucmsg="" />
+                            </div>
+                            <!--
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">
+                            </span>
+                        </div>
+-->
+                        </div>
+                        <div class="row form-input-box">
+                            <div class="col-md-2 input-lable-box">
+                                <lable class="input-lable">密码</lable>
+                            </div>
+                            <div class="col-md-9 input-input-box">
+                                <input type="password" class="form-control input-input" />
+                            </div>
+                            <div class="col-md-9 col-md-offset-2 input-msg-box">
+                                <span class="input-msg">这是提示信息</span>
+                            </div>
+                        </div>
+                        <div class="row form-input-box">
+                            <div class="col-md-2 input-lable-box">
+                                <lable class="input-lable">确定密码</lable>
+                            </div>
+                            <div class="col-md-9 input-input-box">
+                                <input type="password" class="form-control input-input" />
+                            </div>
+                            <div class="col-md-9 col-md-offset-2 input-msg-box">
+                                <span class="input-msg">这是提示信息</span>
+                            </div>
+                        </div>
+                        <div class="row form-input-box">
+                            <div class="col-md-2 input-lable-box">
+                                <lable class="input-lable">名称</lable>
+                            </div>
+                            <div class="col-md-9 input-input-box">
+                                <input type="text" class="form-control input-input" />
+                            </div>
+                            <div class="col-md-9 col-md-offset-2 input-msg-box">
+                                <span class="input-msg">这是提示信息</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="aaaa()">
+                            提交
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--*************模态框结束*************-->
+
+    <!--    时间选择器/提示标签的js-->
+    <script type="text/javascript" src="../js/util.js"></script>
+    <!--    用于表单验证的js文件-->
+    <script type="text/javascript">
+        function aaaa() {
+            console.log("aaaa");
+        }
+    </script>
+</body>
+
+</html>

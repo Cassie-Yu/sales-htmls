@@ -1,0 +1,367 @@
+/*
+ * 项目公用的样式
+ */
+
+@import "./theme.less";
+@import "./rewrite&base.less";
+@import "./tools.less";
+@import "./roles.less";
+
+
+/*
+ *头部样式开始 top start
+ */
+//头部总样式
+.top {
+    background-color: @top-background-color;
+    height: @top-heigth;
+    border-bottom: solid @out-border-color 1px;
+}
+//头部容器样式
+.top-container {
+    background-color: @top-background-color;
+//    width: @body-width;
+    height: @top-heigth - 1;
+    min-width: @body-width;
+//    margin: 0 auto;
+    margin-left: 4.17%;
+    //设置对齐方式
+    .logo , .users{
+        display: inline-block;
+        vertical-align: top;
+    }
+    //logo部分的样式
+    .logo{
+        height: @top-heigth;
+        width: @logo-width;
+        padding-top: 8px;
+        .none-a;
+        .logo-a{
+            font-size: 26px;
+            .logo-i{
+                font-size: 32px;
+                color: #ff7680;
+            }
+            &:hover{
+                color: @a-hover-color;
+            }
+        }
+    }
+    //用户部分的样式
+    .users{
+        height: @top-heigth;
+        width: 280px;
+        float: right;
+        padding-top: 12px;
+        p{
+            margin: 0;
+        }
+        .user-name{
+            color: @font-color + 50;
+        }
+        .login-time{
+            color: @font-color + 50;
+        }
+        .top-user-lable,.top-user-info{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .top-user-lable{
+            text-align: right;
+            color: @font-color - 60;
+            padding-right: 5px;
+        }
+//        .top-user-info{
+//            .user-name,.login-time{
+//                display: block;
+//            }
+//        }
+    }
+}
+//=================== top end ===================
+
+
+/*
+ * 中间样式开始 body start
+ */
+.body{
+    min-width: @body-width;
+    background-color: @body-background-color;
+//    margin: 50px auto 20px auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 4.17%;
+//    margin-right: 4.17%;
+    border: solid @out-border-color 1px;
+    //左边菜单和右边主要部分的对齐方式
+    .menus, .main{
+//        display: inline-block;
+        display: table-cell;
+        vertical-align: top;
+    }
+    /*
+     *栏目样式开始 menus start
+     */
+    .menus{
+//        width: @menus-width;
+        min-width: @menus-min-width;
+        min-height: @menus-min-heigth;
+        
+//        float: none;
+        .items{
+            margin-top: 10px;
+            .item{
+                .none-a;
+                .item-a{
+                    .transition;
+                    line-height: 38px;
+                    padding-left: 30px;
+                    display: block;
+                    .item-icon{
+                        font-size: 18px;
+                        margin-right: 5px;
+                    }
+                    &:hover{
+                        background-color: @menu-checked-background-color;
+                        color: @a-hover-color;
+                    }
+                }
+                .checked-menu{
+                    background-color: @menu-checked-background-color;
+                    color: @a-hover-color;
+                }
+            }
+        }
+    }
+    //=================== menus end ===================
+    
+    /*
+     *主显示区域样式开始 main start
+     */
+    .main {
+//        width: 970px;
+        min-height: 600px;
+        padding: 20px 30px;
+        min-height: @menus-min-heigth;
+        border-left: solid @inner-border-color 1px;
+//        float: none;
+//        min-width: @body-width;
+        .main-container{
+            min-height: 600px;
+        }
+        //主显示区域,头部区域样式
+        .menu-title{
+            border-bottom: solid @out-border-color 1px;
+            font-size: 16px;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .chart-container{
+            min-height: 200px;
+            margin-bottom: 25px;
+            border: solid @inner-border-color 1px;
+            .chart-box{
+                display: inline-block;
+                width: 49%;
+            }
+            .chart-item{
+//                border: solid red 1px;
+                display: inline-block;
+                vertical-align: top;
+                
+            }
+            .chart-condition{
+                display: inline-block;
+                vertical-align: top;
+                width: 450px;
+                padding-left: 25px;
+//                padding-right: 25px;
+                margin-bottom: 15px;
+                .datetime-condition{
+                    display: inline-block;
+                    padding: 0 10px;
+//                    vertical-align: top;
+                }
+            }
+        }
+        
+//        多组合列表栏目样式
+        .auto-lines-container{
+            .auto-line-box{
+                padding-right: 15px;
+                &:last-child{
+                    padding-right: 0px;
+                }
+                dl{
+                    
+                    border: solid @out-border-color 1px;
+                    min-height: 500px;
+                    dt,dd{
+//                        height: 
+                        padding: 8px 15px;
+                    }
+                }
+                dt{
+                    background-color: @menu-checked-background-color;
+                    .lines-item-icon{
+                        float: right;
+                    }
+                }
+                dd{
+//                    <dd>
+//                        <labal class="lines-item">江苏绿能宝融资租赁有限公司</labal>
+//                        <i class="icon icon-xiangqing line-icon"></i>
+//                    </dd>
+                    border-top: solid @out-border-color 1px;
+                    
+                   // border-bottom: solid @out-border-color 1px;//做滚动条增加的样式
+                    
+                    &:hover{
+                        background-color: @menu-checked-background-color;
+                        color: #666;
+                        cursor:pointer;
+                    }
+                    .lines-item{
+                    }
+                    .lines-item-icon{
+                        float: right;
+                    }
+                    .line-icon{
+//                        color: @font-color;
+//                        float: right;
+                        cursor:default;
+                        padding-left: 10px;
+//                        &:hover{
+////                            background-color: @menu-checked-background-color;
+//                            color: @a-hover-color;
+////                            cursor:pointer;
+//                        }
+                    }
+                }
+            }
+        }
+//  .scroll{    
+//    height:460px;
+//    width:100%;
+//    overflow-y:auto;
+//}
+    }
+    //=================== main end ===================
+    
+    //提成率页面的单独样式
+    .commission-box{
+        margin-top: 40px;
+        .table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active{
+            text-align: center;
+            vertical-align:middle;
+        }
+        .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+            text-align: center;
+        }
+        .form-control{
+            padding: 6px 6px;
+        }
+        .half-input{
+            display: inline-block;
+            width: 40%;
+            margin: 0 5px;
+        }
+        .input-oval{
+            border-radius: 17px;
+        }
+        .default-input{
+            width: 60%;
+            margin: 0 5px;
+            display: inline-block;
+        }
+        .commission-button{
+            text-align: center;
+        }
+        table{
+            table-layout:fixed;
+        }
+        .comminssion-dlr-table-box{
+            padding-left: 10px;
+        }
+        .comminssion-dlr-checked{
+            color: @a-hover-color;
+            &:hover{
+                color: @a-hover-color;
+            }
+        }
+//        .comminssion-dlr-checked{
+//        }
+    }
+}
+
+
+/*
+ * 底部样式开始 bottom start
+ */
+//底部样式
+.bottom {
+    min-height: 70px;
+    background-color: @buttom-background-color;
+    border-top: solid @out-border-color 1px;
+}
+
+//=================== bottom end ===================
+//业绩管理页面资金管理模块
+.div-fund{
+    width:100%;
+    .fund-flex{
+        font-size: 16px;
+        height:50px;
+        line-height:50px;
+        border-bottom: solid @out-border-color 1px;
+        position:relative;
+        margin-bottom:25px;
+        .fund-title{
+            display:inline-block;
+            width:200px;
+        }
+        .icon-daochu{
+            position:absolute;
+            right:20px;
+        }
+        .zhankai{
+            position:absolute;
+            right:50px;
+            cursor:pointer;
+        }
+        .data-select{
+            display:inline-block;
+            position:absolute;
+            left:200px;
+            display:none;
+        }
+    }    
+    .fund-content-container{
+        width:100%;
+        height:0;
+        overflow:hidden;
+        position:relative;
+        .fund-content{
+            width:100%;
+            height:500px;
+            position:relative;
+            border-bottom: solid @out-border-color 1px;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            .fund-data{
+                width:100%;
+                height:500px;;
+                position:relative;
+            }
+            .up{
+                position:absolute;
+                bottom:0;
+                right:0;
+                cursor:pointer;
+            }
+        }
+    }    
+}
+
+

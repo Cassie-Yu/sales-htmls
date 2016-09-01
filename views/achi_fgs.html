@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>销售管理系统</title>
+</head>
+
+<body>
+    <div class="title-search-div row">
+        <h3 class="menu-title">业绩&提成</h3>
+        <div class="title-tips-container">
+            <i class="icon icon-daochu" data-toggle="icon-tag" data-placement="bottom" title="导出数据"></i>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-box">
+            <div id="chart-line" class="chart-item" style="width:450px; height:400px;"></div>
+            <div class="chart-condition">
+                设置查询条件的位置
+            </div>
+            
+        </div>
+        <div class="chart-box">
+            <div id="chart-par" class="chart-item" style="width:450px; height:400px;"></div>
+            <div class="chart-condition">
+               统计时间:
+                <div class="datetime-condition">
+                    <input size="16" type="text" value="" class="form-control form_datetime" readonly>
+    <!--                <span class="add-on"><i class="icon-th"></i></span>-->
+                </div>至
+                <div class="datetime-condition">
+                    <input size="16" type="text" value="" class="form-control form_datetime" readonly>
+    <!--                <span class="add-on"><i class="icon-th"></i></span>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="div-fund">
+        <h3 class="fund-flex">
+            <span class="fund-title">点击查看资金状况</span>
+            <i class="icon icon-daochu" data-toggle="icon-tag" data-placement="bottom" title="导出数据"></i>
+            <i class="icon zhankai" data-fund-flex="down">展开</i>
+            <div class="data-select">
+                截止到：
+                <select>
+                    <option>1991</option>
+                    <option>1992</option>
+                </select>年
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                </select>月
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                </select>日
+            </div>
+        </h3>
+        <div class="fund-content-container">
+            <div class="fund-content">
+                <div class="fund-data">
+                    
+                </div>
+                <i class="icon up" data-fund-flex="up">收起</i>
+            </div>
+        </div>
+    </div>
+
+    <div class="title-search-div row">
+        <h3 class="menu-title">业绩详情</h3>
+        <input type="text" class="title-search-input form-control" placeholder="请输入名称" />
+    </div>
+    <table class="table table-bordered table-hover">
+        <tr class="active">
+            <th>名称</th>
+            <th>业绩</th>
+            <th>提成</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>王钢蛋</td>
+            <td>302203</td>
+            <td>234</td>
+            <td>
+                <i class="icon icon-xiangqing" data-toggle="icon-tag" data-placement="bottom" title="详情"></i>
+            </td>
+        </tr>
+        <tr>
+            <td>江铁锤</td>
+            <td>2342341</td>
+            <td>6784</td>
+            <td>
+                <i class="icon icon-xiangqing" data-toggle="icon-tag" data-placement="bottom" title="详情"></i>
+            </td>
+        </tr>
+        <tr>
+            <td>江铁锤</td>
+            <td>2342341</td>
+            <td>6784</td>
+            <td>
+                <i class="icon icon-xiangqing" data-toggle="icon-tag" data-placement="bottom" title="详情"></i>
+            </td>
+        </tr>
+    </table>
+    <div class="pages-div">
+        <nav>
+            <ul class="pagination">
+                <li>
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Previous">
+                        上一页
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">1</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">2</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">3</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">4</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">5</a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        下一页
+                    </a>
+                </li>
+                <li>
+                    <a href="#">尾页</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+<!--   图标绘制的js-->
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChartLine = echarts.init(document.getElementById('chart-line'));
+        var myChartPar = echarts.init(document.getElementById('chart-par'));
+
+         // 指定图表的配置项和数据
+        optionLine = {
+            //            title: {
+            //                text: '折线图堆叠'
+            //            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['销售业绩', '销售提成']
+            },
+            grid: {
+                //                left: '3%',
+                //                right: '4%',
+                //                bottom: '3%',
+                //                containLabel: true
+            },
+            //            toolbox: {
+            //                feature: {
+            //                    saveAsImage: {}
+            //                }
+            //            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['2016-03', '2016-04', '2016-05', '2016-06', '2016-07', '2016-08']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: '销售提成',
+                type: 'line',
+                stack: '总量',
+                data: [120, 132, 101, 134, 90, 230]
+            }, {
+                name: '销售业绩',
+                type: 'line',
+                stack: '总量',
+                data: [820, 932, 901, 934, 1290, 1330]
+            }]
+        };
+
+         //        optionPar = {
+         //            title: {
+         ////                text: '某站点用户访问来源',
+         ////                subtext: '纯属虚构',
+         ////                x: 'center'
+         //            },
+         //            tooltip: {
+         //                trigger: 'item',
+         //                formatter: "{a} <br/>{b} : {c} ({d}%)"
+         //            },
+         //            legend: {
+         ////                orient: 'vertical',
+         ////                left: 'left',
+         //                data: ['个人业绩', '团队业绩']
+         //            },
+         //            grid: {
+         //                left: '3%',
+         //                right: '4%',
+         //                bottom: '3%',
+         //                containLabel: true
+         //            },
+         ////            toolbox: {
+         ////                feature: {
+         ////                    saveAsImage: {}
+         ////                }
+         ////            },
+         //            series: [{
+         //                name: '业绩占比',
+         //                type: 'pie',
+         //                radius: '55%',
+         //                center: ['50%', '60%'],
+         //                data: [{
+         //                    value: 335,
+         //                    name: '个人业绩'
+         //                },{
+         //                    value: 1548,
+         //                    name: '团队业绩'
+         //                }],
+         //                itemStyle: {
+         //                    emphasis: {
+         //                        shadowBlur: 10,
+         //                        shadowOffsetX: 0,
+         //                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+         //                    }
+         //                }
+         //            }]
+         //        };
+        optionBar = {
+            title: {
+//                text: '某地区蒸发量和降水量',
+//                subtext: '纯属虚构'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['蒸发量', '降水量']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+//                    dataView: {
+//                        show: true,
+//                        readOnly: false
+//                    },
+//                    magicType: {
+//                        show: true,
+//                        type: ['line', 'bar']
+//                    },
+//                    restore: {
+//                        show: true
+//                    },
+//                    saveAsImage: {
+//                        show: true
+//                    }
+                }
+            },
+            calculable: true,
+            xAxis: [{
+                type: 'category',
+                data: ['1月----12月']
+            }],
+            yAxis: [{
+                type: 'value'
+            }],
+            series: [{
+                name: '蒸发量',
+                type: 'bar',
+                data: [2.3],
+//                markPoint: {
+//                    data: [{
+//                        type: 'max',
+//                        name: '最大值'
+//                    }, {
+//                        type: 'min',
+//                        name: '最小值'
+//                    }]
+//                },
+//                markLine: {
+//                    data: [{
+//                        type: 'average',
+//                        name: '平均值'
+//                    }]
+//                }
+            }, {
+                name: '降水量',
+                type: 'bar',
+                data: [264],
+//                markPoint: {
+//                    data: [{
+//                        name: '年最高',
+//                        value: 182.2,
+//                        xAxis: 7,
+//                        yAxis: 183
+//                    }, {
+//                        name: '年最低',
+//                        value: 2.3,
+//                        xAxis: 11,
+//                        yAxis: 3
+//                    }]
+//                },
+//                markLine: {
+//                    data: [{
+//                        type: 'average',
+//                        name: '平均值'
+//                    }]
+//                }
+            }]
+        };
+         // 使用刚指定的配置项和数据显示图表。
+        myChartLine.setOption(optionLine);
+        myChartPar.setOption(optionBar);
+    </script>
+
+    <!--    时间选择器/提示标签的js-->
+    <script type="text/javascript" src="../js/util.js"></script>
+
+</body>
+
+</html>

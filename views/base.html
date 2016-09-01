@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>销售管理系统</title>
+
+    <!--    bootstrap框架的样式-->
+    <link href="../lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--    bootstrap时间选择器插件的样式-->
+    <link href="../lib/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css">
+    <!--    bootstrap中button的样式-->
+    <link href="../lib/css/buttons.css" rel="stylesheet" type="text/css">
+
+    <!--    提示框的样式文件-->
+    <link href="../lib/messenger/css/messenger.css" rel="stylesheet" type="text/css">
+    <link href="../lib/messenger/css/messenger-theme-air.css" rel="stylesheet" type="text/css">
+
+    <!--    阿里不图标的css文件引入-->
+    <link href="../lib/iconfont/iconfont.css" rel="stylesheet" type="text/css">
+    <!--    base页面的样式-->
+    <link href="../css/base.css" rel="stylesheet/less" type="text/css">
+    <!--添加滚动条-->
+    <link href="../css/scroll.css" rel="stylesheet" type="text/css">
+    <!--    <script src="../lib/chart/dist/Chart.min.js"></script>-->
+<!--    <link href="../css/kehubiangeng.css" rel="stylesheet" type="text/css">-->
+    <link href="../css/model.css" rel="stylesheet" type="text/css">
+    <link href="../css/model_kehu.css" rel="stylesheet" type="text/css">
+     <link href="../css/modify.css" rel="stylesheet" type="text/css">
+    <script src="../lib/js/echarts.min.js"></script>
+</head>
+
+<body>
+    <!--   头部样式开始-->
+    <div class="top">
+        <div class="top-container col-md-11">
+            <div class="logo">
+                <a href="javascript:void(0)" class="logo-a">
+                    <i class="icon icon-logo1 logo-i"></i>
+                    销售管理系统
+                </a>
+            </div>
+            <div class="users">
+                <div class="top-user-lable">
+                    <p>用户名:</p>
+                    <p>登陆时间:</p>
+                </div>
+                <div class="top-user-info">
+                    <p class="user-name">张铁锤</p>
+                    <p class="login-time">
+                        2016-04-28 32:12:12
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    =============== top end ===============-->
+
+    <!--    中间部分样式开始-->
+    <div class="body col-md-11">
+        <!--       中间,左侧菜单样式-->
+        <div class="menus col-md-2">
+            <dl class="items">
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a checked-menu" data-refresh-page="sales">
+                        <i class="icon icon-xiaoshou item-icon"></i>
+                        销售管理
+                    </a>
+                </dd>
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a" data-refresh-page="order">
+                        <i class="icon icon-dingdan item-icon"></i>
+                        订单管理
+                    </a>
+                </dd>
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a" data-refresh-page="achievement">
+                        <i class="icon icon-yeji item-icon"></i>
+                        业绩管理
+                    </a>
+                </dd>
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a" data-refresh-page="roles">
+                        <i class="icon icon-juese item-icon"></i>
+                        角色管理
+                    </a>
+                </dd>
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a" data-refresh-page="houtai">
+                        <i class="icon icon-ticheng item-icon"></i>
+                       后台管理
+                    </a>
+                </dd>
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a" data-refresh-page="kehu">
+                        <i class="icon icon-kehu item-icon"></i>
+                        客户管理
+                    </a>
+                </dd>
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a" data-refresh-page="lizhi">
+                        <i class="icon icon-xiugai item-icon"></i>
+                        离职管理
+                    </a>
+                </dd>
+                
+<!--
+                <dd class="item">
+                    <a href="javascript:void(0)" class="item-a" data-refresh-page="houtai">
+                        <i class="icon icon-ticheng item-icon"></i>
+                        后台管理
+                    </a>
+                </dd>
+-->
+                
+            </dl>
+        </div>
+        <!--        =============== menus end ===============-->
+
+        <!--        中间右侧主显示区域样式开始-->
+        <div class="main col-md-10" id="main">
+            <div class="main-container" data-form-valid="valid" id="main-container">
+                
+            </div>
+        </div>
+        <!--        =============== main end ===============-->
+    </div>
+    <!--    =============== body end ===============-->
+
+
+    <!--    底部样式开始-->
+    <div class="bottom col-md-12"></div>
+
+
+
+    <!--删除确认模态框开始-->
+    <div class="modal fade bs-example-modal-sm" id="modal_confirm_remove" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">确认框</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- 填写信息的块状输入 +++++++开始-->
+                    <div class="row form-input-box">
+                        <div class="col-md-12 remove-lable-box">
+                            <lable data-remove-confirm="modal-text" class="input-lable">您是否确定删除XXXX</lable>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button button-primary button-small modal-button" data-confirm-modal-button="false">取消</button>
+                    <button type="button" class="button button-caution button-small modal-button" data-confirm-modal-button="true">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--*************删除确认模态框开始*************-->
+
+
+
+    <!--    jquery框架js文件引入-->
+    <script type="text/javascript" src="../lib/js/jquery.min.js"></script>
+    <!--    bootstrap框架js文件引入-->
+    <script type="text/javascript" src="../lib/js/bootstrap.min.js"></script>
+    <!--    bootstrap时间选择区文件引入-->
+    <script type="text/javascript" src="../lib/js/bootstrap-datepicker.min.js"></script>
+    <!--    时间选择器的国际化,js设置-->
+    <script type="text/javascript" src="../lib/js/bootstrap-datepicker-zh.js"></script>
+
+    <!--    警告框的js文件-->
+    <script type="text/javascript" src="../lib/messenger/js/messenger.min.js"></script>
+    <script type="text/javascript" src="../js/imessenger.js"></script>
+
+    <!--    删除模态框的激活js-->
+    <script type="text/javascript" src="../js/ibootbox.js"></script>
+
+    <!--    表单验证的插件-->
+    <script type="text/javascript" src="../lib/jquery_validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../lib/jquery_validation/localization/messages_zh.min.js"></script>
+
+    <!--    基于bootstrap对弹出框,确认对话框的重写-->
+    <!--    主页面或全局中交互的js文件引入-->
+    <script type="text/javascript" src="../js/base.js"></script>
+    <script type="text/javascript" src="../js/ivalid.js"></script>
+    <!--    分页中交互js文件引入     -->
+    <script type="text/javascript" src="../js/modify.js"></script>
+
+    <!--    less解析的js文件引入-->
+    <script type="text/javascript" src="../lib/js/less.min.js"></script>
+    <!--    用来测试前端样式及测试交互的js文件引入-->
+    <script type="text/javascript" src="../js/demo.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            ivalid.base("test_validation", aa);
+        })
+
+        function aa() {
+            console.log("aa");
+        }
+    </script>
+</body>
+
+</html>

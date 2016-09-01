@@ -1,0 +1,31 @@
+body .scroll{
+    border: solid #e7e7eb 1px;
+}
+
+body .scroll .sroll_top{
+    background:#f4f5f9; 
+    border:1px solid #e7e7eb;
+    display:-webkit-box;
+}
+
+body .scroll .sroll_top .scroll_top_message{
+    width:50%;
+    margin-left:5px;
+}
+body .scroll .sroll_top .scroll_top_tianjia{
+    width:48%;
+    text-align:right;
+    margin-top:7px;
+}
+
+body .scroll .scroll_container{
+    height:460px;
+    width:100%;
+    overflow-y:auto;
+}
+body .scroll  dl{              
+    border:0px;
+}
+.scroll_daili{
+    margin-right: 9px;
+}

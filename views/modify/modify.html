@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>后台管理页面</title>
+</head>
+
+<body>
+    <div class="row">
+        <ul class="nav nav-tabs nav-justified" id="commission-nav-box">
+            <li role="presentation" class="active" data-commission-nav="kehu">
+                <a href="javascript:void(0)">客户</a>
+            </li>
+            <li role="presentation" data-commission-nav="fgs">
+                <a href="javascript:void(0)">分公司</a>
+            </li>
+            <li role="presentation" data-commission-nav="xs">
+                <a href="javascript:void(0)">销售人员</a>
+            </li>
+            <li role="presentation" data-commission-nav="dlr">
+                <a href="javascript:void(0)">代理人</a>
+            </li>
+        </ul>
+    </div>
+    <div id="commission-box" class="row commission-box">
+
+    </div>
+    <script type="text/javascript">
+        $(function() {
+//            demo.addHtml('./commission/commission_zgs.html', 'commission-box');
+            
+            $(document).on("click",'[data-commission-nav="kehu"]',function(){
+                demo.addHtml('./modify/modify_kehu.html', 'commission-box');
+            });
+            $(document).on("click",'[data-commission-nav="fgs"]',function(){
+                demo.addHtml('./modify/modify_fgs.html', 'commission-box');
+            });
+            $(document).on("click",'[data-commission-nav="xs"]',function(){
+                demo.addHtml('./modify/modify_xs.html', 'commission-box');
+            });
+            $(document).on("click",'[data-commission-nav="dlr"]',function(){
+                demo.addHtml('./modify/modify_dlr.html', 'commission-box');
+            });
+            
+            
+        });
+    </script>
+    
+   
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>提成设定总公司控制页面</title>
+</head>
+<body>
+   <div class="wrapper_content">
+           
+            <div class="infor">
+               <div class="col-md-4 input-lable-box label_container">
+                   <label>查&nbsp;&nbsp;&nbsp;询&nbsp;&nbsp;&nbsp;客&nbsp;&nbsp;&nbsp;户：</label>
+               </div>
+               
+                <div class="col-md-6 input-input-box input_container">
+                    <input type="text" class="form-control" placeholder="请输入要查询的客户姓名" id="search">
+                    
+                    <table id="sheet">
+                        <tbody>
+                            <tr><td>阿尔法1</td></tr>
+                            <tr><td>阿尔法2</td></tr>
+                            <tr><td>阿尔法3</td></tr>
+                            <tr><td>阿尔法4</td></tr>
+                            <tr><td>阿尔法5</td></tr>
+                        </tbody>
+                </table>
+                </div>  
+            </div>
+            
+            <div class="infor">
+               <div class="col-md-4 input-lable-box label_container">
+                   <label>所属销售员姓名：</label>
+               </div>
+                <div class="col-md-6 input-input-box input_container">
+                </div>  
+            </div>
+            
+            <div class="infor">
+               <div class="col-md-4 input-lable-box label_container">
+                   <label>所属销售用户名：</label>
+               </div>
+                <div class="col-md-6 input-input-box input_container">
+                </div>    
+            </div>
+         
+            <div class="modify_icon">
+
+                <button type="button" class="button_modify"  data-toggle="modal" data-target="#xs_add_model">
+                            添加至销售
+                        </button>
+                <button type="button" class="button_modify"  data-toggle="modal" data-target="#dl_add_model">
+                            添加至代理
+                        </button>
+               <button type="button" class="button_modify" data-toggle="modal" data-target="#kehu_sales_model" data-change-button="btn" disabled>
+                            客户转销售
+                        </button>
+                <button type="button" class="button_modify" data-toggle="modal" data-target="#kehu_daili_model" data-change-button="btn" disabled>
+                            客户转代理
+                        </button>
+            </div>            
+        </div>
+<!-----------------------------------添加客户至销售名下模态框---------------------------------------------------------------->
+           <div class="modal fade bs-example-modal-sm" id="xs_add_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                        添加至销售
+                    </h4>
+                 </div>
+                 <div class="modal-body">
+                   
+                       <form name="form1" >
+                       <input type="text" class="form-control" placeholder="请输入要添加客户的用户名"></br>
+	    	            <select class ="modify_model" id = "companys1">
+	    	               <option value="0">选择分公司</option>
+                           <option value="1">绿能宝北京</option>
+                           <option value="2">绿能宝苏州</option>
+                           <option value="3">绿能宝上海</option>
+                           <option value="4">绿能宝浙江</option>
+                           <option value="5">绿能宝大庆</option>
+	    	            </select>
+	    	            <br><br>
+	    	            <select class ="modify_model" id = "salesmen1">
+	    	                <option>选择对应销售</option>
+	    	            </select>
+	    	            <br /><br />
+	    	            <input type="text" class="form-control" placeholder="对应销售的用户名" disabled="disabled">
+	    	            
+	                </form>
+                    
+                   
+                 </div>
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!-----------------------------------添加客户至销售名下模态框---------------------------------------------------------------->
+<!-----------------------------------添加客户至代理名下模态框---------------------------------------------------------------->
+        <div class="modal fade bs-example-modal-sm" id="dl_add_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                        添加至代理
+                    </h4>
+                 </div>
+                 <div class="modal-body">
+                       <form name="form1" >
+                        <input type="text" class="form-control" placeholder="请输入要添加客户的用户名"></br>
+	    	            <select class ="modify_model" id = "sales">
+	    	               <option value="0">选择分公司</option>
+                           <option value="1">绿能宝北京</option>
+                           <option value="2">绿能宝上海</option>
+                           <option value="3">绿能宝广东</option>
+                           <option value="4">绿能宝浙江</option>
+                           <option value="5">绿能宝大庆</option>
+	    	            </select>
+	    	            <br><br>
+	    	            <select class ="modify_model" id = "dali">
+	    	                <option>选择对应代理人</option>
+                        </select>
+                        <br><br>        
+	    	            <input type="text" class="form-control" placeholder="对应代理的用户名" disabled="disabled">
+	    	            
+	                </form>
+                    
+                 </div>
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!-----------------------------------添加客户至代理名下模态框---------------------------------------------------------------->
+<!-----------------------------------客户转销售模态框---------------------------------------------------------------->
+           <div class="modal fade bs-example-modal-sm" id="kehu_sales_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      客户转销售
+                    </h4>
+                 </div>
+                 <div class="modal-body">
+                   
+                       <select class="modify_model">
+                           <option>选择分公司</option>
+                           <option>绿能宝北京</option>
+                           <option>绿能宝苏州</option>
+                           <option>绿能宝上海</option>
+                           <option>绿能宝浙江</option>
+                           <option>绿能宝大庆</option>
+                       </select>
+                   
+                 </div>
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="fail()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!-----------------------------------客户转销售模态框----------------------------------------------------------------> 
+<!-----------------------------------客户转代理模态框------------------------------------------------------------------------------>
+        <div class="modal fade bs-example-modal-sm" id="kehu_daili_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                 <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      客户转代理
+                    </h4>
+                 </div>
+                 
+                 <div class="modal-body">
+                   <form name="form1" >
+	    	            <select class ="modify_model" id = "companys2">
+	    	               <option value="0">选择分公司</option>
+                           <option value="1">绿能宝北京</option>
+                           <option value="2">绿能宝苏州</option>
+                           <option value="3">绿能宝上海</option>
+                           <option value="4">绿能宝浙江</option>
+                           <option value="5">绿能宝大庆</option>
+	    	            </select><br /><br />
+	    	            <select class ="modify_model" id = "salesmen2">
+	    	                <option>选择对应销售</option>
+	    	            </select><br /><br />
+	    	            <input type="text" class="form-control" placeholder="对应销售的用户名" disabled="disabled">
+	                </form>
+                </div>
+                 
+                 <div class="modal-footer">
+                        <button type="button" class="button button-primary button-small modal-button" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>
+                 </div>
+              </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+       </div>
+<!-----------------------------------客户转代理模态框------------------------------------------------------------------------------->
+</body>
+
+</html>

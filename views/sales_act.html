@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>销售管理系统</title>
+</head>
+
+<body>
+     <div class="scroll">
+     <div class="sroll_top"> 
+        <div class="scroll_top_message">    
+            <h5 class="lines-title-item"><strong>代理人信息</strong></h5>
+        </div>    
+            <div class="scroll_top_tianjia">
+                <strong><i id="dl_add_icon" class="icon icon-tianjia line-icon icon-primary" data-toggle="icon-tag" data-placement="bottom" title="添加" data-modal="adddlr"></i></strong>
+            </div>
+        
+    </div> 
+    
+    <div class="scroll_container">   
+      <dl style="border:0px;height:100px">
+        <dd>
+            <labal class="lines-item">代理人1</labal>
+<!--            <i class="icon icon-xiangqing line-icon"></i>-->
+            <div class="lines-item-icon">
+                <i class="icon icon-xiangqing line-icon icon-primary" data-toggle="icon-tag" data-placement="bottom" title="详情"></i>
+                <i class="icon icon-xiugai line-icon icon-highlight" data-toggle="icon-tag" data-placement="bottom" title="修改"></i>
+                <i class="icon icon-shanchu line-icon icon-caution" data-toggle="icon-tag" data-placement="bottom" title="删除"></i>
+            </div>
+        </dd> 
+        <dd>
+            <labal class="lines-item">代理人2</labal>
+<!--            <i class="icon icon-xiangqing line-icon"></i>-->
+            <div class="lines-item-icon">
+                <i class="icon icon-xiangqing line-icon icon-primary" data-toggle="icon-tag" data-placement="bottom" title="详情"></i>
+                <i class="icon icon-xiugai line-icon icon-highlight" data-toggle="icon-tag" data-placement="bottom" title="修改"></i>
+                <i class="icon icon-shanchu line-icon icon-caution" data-toggle="icon-tag" data-placement="bottom" title="删除"></i>
+            </div>
+        </dd>
+        <dd>
+            <labal class="lines-item">代理人3</labal>
+<!--            <i class="icon icon-xiangqing line-icon"></i>-->
+            <div class="lines-item-icon">
+                <i class="icon icon-xiangqing line-icon icon-primary" data-toggle="icon-tag" data-placement="bottom" title="详情"></i>
+                <i class="icon icon-xiugai line-icon icon-highlight" data-toggle="icon-tag" data-placement="bottom" title="修改"></i>
+                <i class="icon icon-shanchu line-icon icon-caution" data-toggle="icon-tag" data-placement="bottom" title="删除"></i>
+            </div>
+        </dd>
+        <dd>
+            <labal class="lines-item">代理人4</labal>
+<!--            <i class="icon icon-xiangqing line-icon"></i>-->
+            <div class="lines-item-icon">
+                <i class="icon icon-xiangqing line-icon icon-primary" data-toggle="icon-tag" data-placement="bottom" title="详情"></i>
+                <i class="icon icon-xiugai line-icon icon-highlight" data-toggle="icon-tag" data-placement="bottom" title="修改"></i>
+                <i class="icon icon-shanchu line-icon icon-caution" data-toggle="icon-tag" data-placement="bottom" title="删除"></i>
+            </div>
+        </dd>
+       </dl>
+     </div>
+    </div>
+    
+    
+    
+     <!--    模态框开始-->
+     
+     
+<!--
+    <div class="modal fade" id="adddlr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">       更改id,便于监听事件的调用
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">添加代理人</h4>
+                </div>
+                <div class="modal-body">
+-->
+                    <!--                   填写信息的块状输入 +++++++开始-->
+<!--
+                    <div class="row form-input-box">
+                        <div class="col-md-2 input-lable-box">
+                            <lable class="input-lable">所属销售</lable>
+                        </div>
+                        <div class="col-md-9 input-input-box">
+                            <input type="text"  id="add-dl-model-xs-name" class="form-control input-input" readonly/>添加销售员name
+-->
+<!--
+                        </div>
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">
+                                这是提示信息
+                            </span>
+                        </div>
+                    </div>
+                    
+                       <div class="row form-input-box">
+                        <div class="col-md-2 input-lable-box">
+                            <lable class="input-lable">销售id</lable>
+                        </div>
+                        <div class="col-md-9 input-input-box">
+                            <input type="text" id="add-dl-model-xs-id" class="form-control input-input"  readonly/>添加销售员id
+-->
+<!--
+                        </div>
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">
+                                这是提示信息
+                            </span>
+                        </div>
+                    </div>
+                    
+                       <div class="row form-input-box">
+                        <div class="col-md-2 input-lable-box">
+                            <lable class="input-lable">用户名</lable>
+                        </div>
+                        <div class="col-md-9 input-input-box">
+                            <input type="text" class="form-control input-input" />
+                        </div>
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">
+                                这是提示信息
+                            </span>
+                        </div>
+                    </div>
+                      
+                       <div class="row form-input-box">
+                        <div class="col-md-2 input-lable-box">
+                            <lable class="input-lable">密码</lable>
+                        </div>
+                        <div class="col-md-9 input-input-box">
+                            <input type="password" class="form-control input-input" />
+                        </div>
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">
+                                这是提示信息
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-input-box">
+                        <div class="col-md-2 input-lable-box">
+                            <lable class="input-lable">确认密码</lable>
+                        </div>
+                        <div class="col-md-9 input-input-box">
+                            <input type="password" class="form-control input-input" />
+                        </div>
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">
+                                这是提示信息
+                            </span>
+                        </div>
+                    </div>
+                    
+-->
+                    <!--                   填写信息的块状输入 +++++++结束-->
+<!--
+                    <div class="row form-input-box">
+                        <div class="col-md-2 input-lable-box">
+                            <lable class="input-lable">名称</lable>
+                        </div>
+                        <div class="col-md-9 input-input-box">
+                            <input type="text" class="form-control input-input" />
+                        </div>
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">
+-->
+<!--                                这是提示信息-->
+<!--
+                            </span>
+                        </div>
+                    </div>
+-->
+                  <!-- <div class="row form-input-box">
+                        <div class="col-md-2 input-lable-box">
+                            <lable class="input-lable">代理人</lable>
+                        </div>
+                        <div class="col-md-9 input-input-box">
+                            <input type="text" class="form-control input-input" />
+                        </div>
+                        <div class="col-md-9 col-md-offset-2 input-msg-box">
+                            <span class="input-msg">这是提示信息</span>
+                        </div>
+                    </div>-->
+<!--
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button button-primary button-small modal-button">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    
+    
+    <div class="modal fade" id="adddlr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">       
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">离职变更</h4>
+                </div>
+                <div class="modal-body">
+<!--          **************************************************************             -->
+        <div class="item_model">
+                <div class="input_model">
+                    <input type="text" placeholder="请输入离职销售">
+                </div>
+            <div>
+                <dl>
+                    <dt>
+                        <labal class="lines-title-item">公司信息</labal>
+                    </dt>
+                    <div>              <!--用来添加滚动条div-->
+                       <dd data-refresh-item="sales" data-fgs-value-id="100" >
+                            <labal class="lines-item">销售1</labal>                   
+                        </dd>
+                        <dd data-refresh-item="sales">
+                            <labal class="lines-item">销售2</labal>                   
+                        </dd>
+                        <dd data-refresh-item="sales">
+                            <labal class="lines-item">销售3</labal>                  
+                        </dd>
+                        <dd data-refresh-item="sales">
+                            <labal class="lines-item">销售4</labal> 
+                        </dd> 
+                    </div>
+               </dl>
+           </div>      
+        </div>
+<!--                ************************************************************-->
+                       
+            <div class="item_model">
+                <div class="zhanwei_model"></div>
+                <div>
+                    <dl>
+                        <dt>
+                            <labal class="lines-title-item">公司信息</labal>
+                        </dt>
+                        <div>               <!--用来添加滚动条div-->
+                           <dd data-refresh-item="sales" data-fgs-value-id="100" >
+                                <labal class="lines-item"><input type="checkbox">&nbsp;&nbsp;客户A</labal>                   
+                            </dd>
+                            <dd data-refresh-item="sales">
+                                <labal class="lines-item"><input type="checkbox">&nbsp;&nbsp;客户B</labal>                   
+                            </dd>
+                            <dd data-refresh-item="sales">
+                                <labal class="lines-item"><input type="checkbox">&nbsp;&nbsp;客户C</labal>                  
+                            </dd>
+                            <dd data-refresh-item="sales">
+                                <labal class="lines-item"><input type="checkbox">&nbsp;&nbsp;客户D</labal> 
+                            </dd> 
+                        </div>
+                   </dl>
+                </div>      
+            </div>
+<!--                   *********************************************************    -->
+            <div class="item_model">
+                <div class="input_model" >
+                    <input type="text" placeholder="请输入在职销售">
+                </div>
+                <div>
+                    <dl>
+                        <dt>
+                            <labal class="lines-title-item">公司信息</labal>
+                        </dt>
+                        <div>           <!--用来添加滚动条div-->                                           
+                           <dd data-refresh-item="sales" data-fgs-value-id="100" >
+                                <labal class="lines-item">在职销售1</labal>                   
+                            </dd>
+                            <dd data-refresh-item="sales">
+                                <labal class="lines-item">在职销售2</labal>                   
+                            </dd>
+                            <dd data-refresh-item="sales">
+                                <labal class="lines-item">在职销售3</labal>                  
+                            </dd>
+                            <dd data-refresh-item="sales">
+                                <labal class="lines-item">在职销售4</labal> 
+                            </dd> 
+                            
+                        </div>
+                   </dl>
+               </div>      
+            </div> 
+<!--               ****************************************************************************** -->
+                <div class="modal-footer footer">
+                    <button type="button" class="button button-primary button-small modal-button">提交</button>
+                </div>
+            
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--*************模态框结束*************-->
+
+    <!--    时间选择器/提示标签的js-->
+    <script type="text/javascript" src="../js/util.js"></script>
+
+</body>
+
+</html>

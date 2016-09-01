@@ -1,0 +1,93 @@
+/*
+ * 用户,权限使用页面的单独样式
+ */
+//@impart './theme.less';
+//@import "./theme.less";
+.users-role-container{
+    .users-role-box{
+//        padding-right: 15px;
+        .lines-item-icon{
+            float: right;
+        }
+        a{
+            cursor:pointer;
+        }
+        .i-user-checked{
+//            border: solid @a-hover-color 1px;
+            color: @a-hover-color;
+        }
+    }
+    .user-roles-box{
+        dl{
+            border-left: 0px;
+        }
+        dd{
+            
+            .lines-item-icon{
+                padding-right: 10px;
+                margin-top: -30px;
+                .line-icon {
+                    padding-right: 5px;
+                }
+            }
+        }
+        .i-role-checked{
+//            border: solid @a-hover-color 1px;
+            color: @a-hover-color;
+        }
+    }
+    dl{
+                    
+        border: solid @inner-border-color 1px;
+//        min-height: 500px;
+        margin-bottom: 0px;
+        dt{
+            padding: 8px 15px;
+            background-color: @menu-checked-background-color;
+            border-bottom: solid @inner-border-color 1px;
+        }
+        dd{
+//            padding: 8px 10px;
+//            margin-left: 15px;
+            .none-a;
+//            .users-item-a,.users-item-i{
+//                display: inline-block;
+//                vertical-align:text-top;
+////                vertical-align: top;
+//            }
+            .users-item-i{
+                display: block;
+                float: left;
+                padding-top: 8px;
+                padding-left: 15px;
+                padding-right: 10px;   
+            }
+            a{
+                border-bottom: dashed @inner-border-color 1px;
+                padding: 10px 0px 10px 15px;
+//                margin-left: -15px;
+                display: block;
+                line-height: 20px;
+                
+                &:hover{
+                    background-color: @menu-checked-background-color;
+                }
+            }
+            dl{
+                padding-left: 25px;
+                
+            }
+        }
+    }
+    .users-role-inner-dl{
+        border: 0px;
+        a{
+            border-left: solid  @inner-border-color 1px;
+        }
+        .users-role-inner-dl{
+            a{
+                border-left: dashed  @inner-border-color 1px;
+            }
+        }
+    }
+}
