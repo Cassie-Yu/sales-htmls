@@ -92,11 +92,13 @@ $(window).resize(function(){
 })
 
 $(document).on("click","[data-fund-flex='down']",function(){
+    $(this).addClass("on").siblings().removeClass("on");
     $(".fund-content-container").animate({height:$(".fund-content").height()+50});
     $(".data-select").css("display","inline-block");
 })
 
 $(document).on("click","[data-fund-flex='up']",function(){
+    $(this).addClass("on").siblings().removeClass("on");
     $(".fund-content-container").animate({height:"0"},function(){
         $(".data-select").css("display","none");
     });

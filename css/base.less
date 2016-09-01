@@ -323,18 +323,34 @@
         }
         .icon-daochu{
             position:absolute;
-            right:20px;
+            right:50px;
         }
         .zhankai{
             position:absolute;
-            right:50px;
+            right:20px;
             cursor:pointer;
+        }
+        .up{
+            position:absolute;
+            right:20px;
+            cursor:pointer;
+            transform:rotate(-90deg);
+            -ms-transform:rotate(-90deg); 	
+            -moz-transform:rotate(-90deg); 	
+            -webkit-transform:rotate(-90deg); 
+            -o-transform:rotate(-90deg); 
+        }
+        .on{
+            display:none;
         }
         .data-select{
             display:inline-block;
             position:absolute;
-            left:200px;
+            left:150px;
             display:none;
+            .datetime-condition{
+                display:inline-block;
+            }
         }
     }    
     .fund-content-container{
@@ -358,19 +374,13 @@
                     padding:10px 15px;
                     line-height:40px;
                     border:solid @out-border-color 1px;
-                    margin:0 30px 30px;
+                    margin:0 15px 30px;
                     float:left;
                     .result{
                         float:right;
                         color:#5f9afc;
                     }
                 }
-            }
-            .up{
-                position:absolute;
-                bottom:0;
-                right:0;
-                cursor:pointer;
             }
             .total{
                 width:100%;

@@ -646,18 +646,34 @@ body {
 }
 .div-fund .fund-flex .icon-daochu {
   position: absolute;
-  right: 20px;
+  right: 50px;
 }
 .div-fund .fund-flex .zhankai {
   position: absolute;
-  right: 50px;
+  right: 20px;
   cursor: pointer;
+}
+.div-fund .fund-flex .up {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.div-fund .fund-flex .on {
+  display: none;
 }
 .div-fund .fund-flex .data-select {
   display: inline-block;
   position: absolute;
-  left: 200px;
+  left: 150px;
   display: none;
+}
+.div-fund .fund-flex .data-select .datetime-condition {
+  display: inline-block;
 }
 .div-fund .fund-content-container {
   width: 100%;
@@ -683,18 +699,12 @@ body {
   padding: 10px 15px;
   line-height: 40px;
   border: solid #d9dadc 1px;
-  margin: 0 30px 30px;
+  margin: 0 15px 30px;
   float: left;
 }
 .div-fund .fund-content-container .fund-content .fund-data .company .result {
   float: right;
   color: #5f9afc;
-}
-.div-fund .fund-content-container .fund-content .up {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
 }
 .div-fund .fund-content-container .fund-content .total {
   width: 100%;
