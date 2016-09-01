@@ -85,8 +85,14 @@ var change_kehu = function(){
 }
 
 //资金状况模块
+
+$(window).resize(function(){
+    var height = $(".fund-content").height()+50;
+    $(".fund-content-container").css("height",height);
+})
+
 $(document).on("click","[data-fund-flex='down']",function(){
-    $(".fund-content-container").animate({height:"500px"});
+    $(".fund-content-container").animate({height:$(".fund-content").height()+50});
     $(".data-select").css("display","inline-block");
 })
 

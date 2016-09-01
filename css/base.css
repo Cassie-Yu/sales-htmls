@@ -667,7 +667,7 @@ body {
 }
 .div-fund .fund-content-container .fund-content {
   width: 100%;
-  height: 500px;
+  overflow: hidden;
   position: relative;
   border-bottom: solid #d9dadc 1px;
   padding-bottom: 15px;
@@ -675,12 +675,37 @@ body {
 }
 .div-fund .fund-content-container .fund-content .fund-data {
   width: 100%;
-  height: 500px;
   position: relative;
+  overflow: hidden;
+}
+.div-fund .fund-content-container .fund-content .fund-data .company {
+  height: 100px;
+  padding: 10px 15px;
+  line-height: 40px;
+  border: solid #d9dadc 1px;
+  margin: 0 30px 30px;
+  float: left;
+}
+.div-fund .fund-content-container .fund-content .fund-data .company .result {
+  float: right;
+  color: #5f9afc;
 }
 .div-fund .fund-content-container .fund-content .up {
   position: absolute;
   bottom: 0;
   right: 0;
   cursor: pointer;
+}
+.div-fund .fund-content-container .fund-content .total {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  line-height: 40px;
+  text-align: center;
+  clear: both;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+}
+.div-fund .fund-content-container .fund-content .total .result {
+  color: #5f9afc;
 }

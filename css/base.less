@@ -344,15 +344,27 @@
         position:relative;
         .fund-content{
             width:100%;
-            height:500px;
+            overflow:hidden;
             position:relative;
             border-bottom: solid @out-border-color 1px;
             padding-bottom: 15px;
             margin-bottom: 20px;
             .fund-data{
                 width:100%;
-                height:500px;;
                 position:relative;
+                overflow:hidden;
+                .company{
+                    height:100px;
+                    padding:10px 15px;
+                    line-height:40px;
+                    border:solid @out-border-color 1px;
+                    margin:0 30px 30px;
+                    float:left;
+                    .result{
+                        float:right;
+                        color:#5f9afc;
+                    }
+                }
             }
             .up{
                 position:absolute;
@@ -360,8 +372,19 @@
                 right:0;
                 cursor:pointer;
             }
+            .total{
+                width:100%;
+                height:40px;
+                overflow:hidden;
+                line-height:40px;
+                text-align:center;
+                clear:both;
+                margin-bottom:10px;
+                background-color:#f4f4f4;
+                .result{
+                    color:#5f9afc;
+                }
+            }
         }
-    }    
+    } 
 }
-
-
