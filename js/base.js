@@ -68,6 +68,11 @@ $(document).on("click","[ data-form='form_pre']",function(){
     }
 })
 
-$(document).on("click","[data-change-oksales='oksales']",function(){
-    $(".handle-button:disabled").removeClass("hide").siblings().addClass("hide");
+$(document).on("click","[data-ok-changes='okchanges']",function(){
+    var parent = $(this).parent("td");
+    var _this = this;
+    $(document).on("click","[data-change-oksales='oksales']",function(){
+        $(".handle-button",$(parent)).addClass("hide");
+        $(_this).siblings(".handle-button:disabled").removeClass("hide");
+    })
 })

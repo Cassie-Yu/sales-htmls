@@ -25,7 +25,7 @@
             <td>三三</td>
             <td>
                 <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#megchange">信息修改</button>
-                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#oksales">正式入职</button>
+                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#oksales"  data-ok-changes="okchanges">正式入职</button>
                 <button type="button" class="button button-primary button-small handle-button hide" disabled >已入职</button>
             </td>
         </tr>
@@ -33,15 +33,61 @@
             <td>绿能宝苏州</td>
             <td>李四</td>
             <td>四四</td>
-            <td></td>
+            <td>
+                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#megchange">信息修改</button>
+                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#oksales"  data-ok-changes="okchanges">正式入职</button>
+                <button type="button" class="button button-primary button-small handle-button hide" disabled >已入职</button>
+            </td>
         </tr>
         <tr>
             <td>绿能宝上海</td>
             <td>王五</td>
             <td>五五</td>
-            <td></td>
+            <td>
+                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#megchange">信息修改</button>
+                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#oksales"  data-ok-changes="okchanges">正式入职</button>
+                <button type="button" class="button button-primary button-small handle-button hide" disabled >已入职</button>
+            </td>
         </tr>
     </table>
+    
+    <div class="pages-div">
+        <nav>
+            <ul class="pagination">
+               <li>
+                   <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Previous">
+                        上一页
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">1</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">2</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">3</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">4</a>
+                </li>
+                <li>
+                    <a href="#" class="page-num">5</a>
+                </li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        下一页
+                    </a>
+                </li>
+                <li>
+                   <a href="#">尾页</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     
 <!-- 添加模态框开始 -->
     <div class="modal fade bs-example-modal-sm" id="add_presales" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -76,6 +122,7 @@
                                <option>绿能宝浙江</option>
                                <option>绿能宝大庆</option>
                             </select><br/><br/>
+                            <input type="text" class="form-control" placeholder="请输入要添加人员的姓名" /><br>
                             <input type="text" class="form-control" placeholder="请输入要添加人员的用户名" />
                        </form>
                         
@@ -86,7 +133,7 @@
                     
                     <div class="add_dlr_box hide">
                        <form>
-                            <select class ="modify_model" id = "companys2">
+                            <select class ="modify_model" id = "companys1">
                                <option value="0">选择分公司</option>
                                <option value="1">绿能宝北京</option>
                                <option value="2">绿能宝苏州</option>
@@ -94,9 +141,10 @@
                                <option value="4">绿能宝浙江</option>
                                <option value="5">绿能宝大庆</option>
                             </select><br/><br/>
-                            <select class ="modify_model" id = "salesmen2">
+                            <select class ="modify_model" id = "salesmen1">
                                 <option>选择对应销售</option>
                             </select><br/><br/>
+                            <input type="text" class="form-control" placeholder="请输入要添加人员的姓名" /><br>
                             <input type="text" class="form-control" placeholder="请输入要添加人员的用户名" />
                        </form>
                         

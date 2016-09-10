@@ -84,8 +84,8 @@ $(function() {
 //    });
    //------------------------------------------------------------------------------------   
     //--------------------添加预入职销售管理的内容-----------------------------------------
-    $(document).on("click","[data-refresh-page='presales']",function(){
-        demo.addHtml('./presales.html', 'main-container');
+    $(document).on("click","[data-refresh-page='pre_sales']",function(){
+        demo.addHtml('./pre_sales.html', 'main-container');
     })
     
      //加载预入职管理模块预入职订单和客户的监听事件
