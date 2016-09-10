@@ -56,3 +56,18 @@ $(function() {
         $("#hide").val("");
     });
 })
+
+//    预入职销售管理页面js
+$(document).on("click","[ data-form='form_pre']",function(){
+    if($(".sales",$(this)).is(":checked")){
+        $(".add_sales_box").removeClass("hide");
+        $(".add_dlr_box").addClass("hide");
+    }else if($(".dlr",$(this)).is(":checked")){
+        $(".add_sales_box").addClass("hide");
+        $(".add_dlr_box").removeClass("hide");
+    }
+})
+
+$(document).on("click","[data-change-oksales='oksales']",function(){
+    $(".handle-button:disabled").removeClass("hide").siblings().addClass("hide");
+})

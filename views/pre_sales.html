@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>销售管理系统</title>
+</head>
+
+<body>
+    <div class="title-search-div row">
+        <h3 class="menu-title">预入职销售管理</h3>
+        <i class="icon icon-tianjia add_btn" data-toggle="modal" data-target="#add_presales"></i>
+    </div>
+    <table class="table table-bordered table-hover">
+        <tr class="active">
+            <th>所属分公司</th>
+            <th>姓名</th>
+            <th>用户名</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>绿能宝北京</td>
+            <td>张三</td>
+            <td>三三</td>
+            <td>
+                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#megchange">信息修改</button>
+                <button type="button" class="button button-primary button-small handle-button" data-toggle="modal" data-target="#oksales">正式入职</button>
+                <button type="button" class="button button-primary button-small handle-button hide" disabled >已入职</button>
+            </td>
+        </tr>
+        <tr>
+            <td>绿能宝苏州</td>
+            <td>李四</td>
+            <td>四四</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>绿能宝上海</td>
+            <td>王五</td>
+            <td>五五</td>
+            <td></td>
+        </tr>
+    </table>
+    
+<!-- 添加模态框开始 -->
+    <div class="modal fade bs-example-modal-sm" id="add_presales" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      添加销售或代理
+                    </h4>
+                 </div>
+                               
+                <div class="modal-body">
+                    <form data-form="form_pre">
+                        请选择预入职人员身份<br /><br />
+                        <input type="radio" id="sales" class="sales" name="add_sales" checked>
+                        <label for="sales">销售</label>
+                        <input type="radio" id="dlr" class="dlr" name="add_sales">
+                        <label for="dlr">代理</label>                        
+                    </form><br />
+                     
+                    <div class="add_sales_box">
+                       <form>
+                            <select class ="modify_model">
+                               <option>选择分公司</option>
+                               <option>绿能宝北京</option>
+                               <option>绿能宝苏州</option>
+                               <option>绿能宝上海</option>
+                               <option>绿能宝浙江</option>
+                               <option>绿能宝大庆</option>
+                            </select><br/><br/>
+                            <input type="text" class="form-control" placeholder="请输入要添加人员的用户名" />
+                       </form>
+                        
+                        <button type="button" class="button button-primary button-small okbtn" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>                      
+                    </div> 
+                    
+                    <div class="add_dlr_box hide">
+                       <form>
+                            <select class ="modify_model" id = "companys2">
+                               <option value="0">选择分公司</option>
+                               <option value="1">绿能宝北京</option>
+                               <option value="2">绿能宝苏州</option>
+                               <option value="3">绿能宝上海</option>
+                               <option value="4">绿能宝浙江</option>
+                               <option value="5">绿能宝大庆</option>
+                            </select><br/><br/>
+                            <select class ="modify_model" id = "salesmen2">
+                                <option>选择对应销售</option>
+                            </select><br/><br/>
+                            <input type="text" class="form-control" placeholder="请输入要添加人员的用户名" />
+                       </form>
+                        
+                        <button type="button" class="button button-primary button-small okbtn" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>                      
+                    </div>    
+                </div>                
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+<!-- 添加模态框结束 -->
+
+<!-- 信息修改模态框开始 -->
+    <div class="modal fade bs-example-modal-sm" id="megchange" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      用户信息修改
+                    </h4>
+                 </div>
+                               
+                <div class="modal-body">
+                    <form  data-form="form_pre">
+                        请选择要将预入职人员身份修改为<br /><br />
+                        <input type="radio" id="megsales" class="sales" name="change_sales" checked>
+                        <label for="megsales">销售</label>
+                        <input type="radio" id="megdlr" class="dlr" name="change_sales">
+                        <label for="megdlr">代理</label>                        
+                    </form><br />
+                     
+                    <div class="add_sales_box">
+                       <form>
+                            <select class ="modify_model">
+                               <option>选择要修改到哪家分公司</option>
+                               <option>绿能宝北京</option>
+                               <option>绿能宝苏州</option>
+                               <option>绿能宝上海</option>
+                               <option>绿能宝浙江</option>
+                               <option>绿能宝大庆</option>
+                            </select><br/><br/>
+                            <input type="text" class="form-control" placeholder="请输入要修改人员的用户名" />
+                       </form>
+                        
+                        <button type="button" class="button button-primary button-small okbtn" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>                      
+                    </div> 
+                    
+                    <div class="add_dlr_box hide">
+                       <form>
+                            <select class ="modify_model" id = "companys2">
+                               <option value="0">选择要修改到哪家分公司</option>
+                               <option value="1">绿能宝北京</option>
+                               <option value="2">绿能宝苏州</option>
+                               <option value="3">绿能宝上海</option>
+                               <option value="4">绿能宝浙江</option>
+                               <option value="5">绿能宝大庆</option>
+                            </select><br/><br/>
+                            <select class ="modify_model" id = "salesmen2">
+                                <option>选择对应销售</option>
+                            </select><br/><br/>
+                            <input type="text" class="form-control" placeholder="请输入要修改人员的用户名" />
+                       </form>
+                        
+                        <button type="button" class="button button-primary button-small okbtn" data-form-valid='submit' onclick="success()" data-dismiss="modal">
+                            确定
+                        </button>                      
+                    </div>    
+                </div>                
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+<!-- 信息修改模态框结束 -->
+
+<!-- 正式入职模态框开始 -->
+    <div class="modal fade bs-example-modal-sm" id="oksales" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" 
+                       data-dismiss="modal" aria-hidden="true">
+                          &times;
+                    </button>
+                   <h4 class="modal-title" id="myModalLabel">
+                      正式入职管理
+                    </h4>
+                 </div>
+                               
+                <div class="modal-body"> 
+                    请确认此用户要正式入职吗？
+                    <button type="button" class="button button-primary button-small okbtn" data-form-valid='submit' onclick="success()" data-dismiss="modal" data-change-oksales="oksales">
+                        确定
+                    </button>     
+                </div>                
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+<!-- 正式入职模态框结束 -->
+
+</body>
+
+</html>

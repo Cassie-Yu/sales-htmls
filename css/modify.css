@@ -18,7 +18,7 @@
     margin-left:33%;
 }
 
- table {
+ .modify_sheet {
     font-family: '微软雅黑', '宋体', '黑体';
     width: 300px;
     position: absolute;
@@ -32,13 +32,13 @@
     display: none; 
   }
 
-  td {
+ .modify_sheet td {
     line-height: 30px;
     padding:0 8px;
     width:300px;
   }
 
-  td:hover {
+ .modify_sheet td:hover {
     background-color: #a8d5fc;
     cursor: pointer;
   }
@@ -104,7 +104,11 @@
     background-color:transparent;
     border:1px solid #ccc;
 }
-
-button:disabled{
-    opacity:0.5;
+.modify_show{
+    opacity: 1;
 }
+.modify_hide{
+    opacity: 0.5;
+}
+
+

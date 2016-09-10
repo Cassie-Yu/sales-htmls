@@ -82,7 +82,19 @@ $(function() {
 //        console.log("abc");
 //        demo.addHtml('./modify.html', 'main-container');
 //    });
-   //------------------------------------------------------------------------------------    
+   //------------------------------------------------------------------------------------   
+    //--------------------添加预入职销售管理的内容-----------------------------------------
+    $(document).on("click","[data-refresh-page='presales']",function(){
+        demo.addHtml('./presales.html', 'main-container');
+    })
+    
+     //加载预入职管理模块预入职订单和客户的监听事件
+      $(document).on("click", "[data-refresh-page='pre_kehu']", function() {
+        demo.addHtml('./pre_kehu.html', 'main-container');
+    });
+      $(document).on("click", "[data-refresh-page='pre_order']", function() {
+        demo.addHtml('./pre_order.html', 'main-container');
+    });
     
     //销售管理中,从销售加载代理人信息的监听事件
     $(document).on("click", "[data-refresh-item='act']", function() {
