@@ -58,14 +58,21 @@ $(function() {
 })
 
 //    预入职销售管理页面js
-$(document).on("click","[ data-form='form_pre']",function(){
+$(document).on("click","[data-form='form_pre']",function(){
     if($(".sales",$(this)).is(":checked")){
-        $(".add_sales_box").removeClass("hide");
-        $(".add_dlr_box").addClass("hide");
+        $(".add_sales_box",$(this).parent(".modal-body")).removeClass("hide");
+        $(".add_dlr_box",$(this).parent(".modal-body")).addClass("hide");
     }else if($(".dlr",$(this)).is(":checked")){
-        $(".add_sales_box").addClass("hide");
-        $(".add_dlr_box").removeClass("hide");
+        $(".add_sales_box",$(this).parent(".modal-body")).addClass("hide");
+        $(".add_dlr_box",$(this).parent(".modal-body")).removeClass("hide");
     }
+})
+
+$(document).on("click","[data-toggle='modal']",function(){
+    $(".sales").prop("checked",true);
+    $(".dlr").prop("checked",false);
+    $(".add_sales_box").removeClass("hide");
+    $(".add_dlr_box").addClass("hide");
 })
 
 $(document).on("click","[data-ok-changes='okchanges']",function(){

@@ -10,8 +10,22 @@
 <body>
     <div class="title-search-div row">
         <h3 class="menu-title">预入职销售管理</h3>
+        <input type="text" class="title-search-input form-control" placeholder="请输入预入职用户姓名" />
+    </div>
+    
+    <div class="showlist">
+        每页展示
+        <select>
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+        </select>条记录
+    </div>
+    
+    <div>
         <i class="icon icon-tianjia add_btn" data-toggle="modal" data-target="#add_presales"></i>
     </div>
+    
     <table class="table table-bordered table-hover">
         <tr class="active">
             <th>所属分公司</th>
@@ -122,7 +136,6 @@
                                <option>绿能宝浙江</option>
                                <option>绿能宝大庆</option>
                             </select><br/><br/>
-                            <input type="text" class="form-control" placeholder="请输入要添加人员的姓名" /><br>
                             <input type="text" class="form-control" placeholder="请输入要添加人员的用户名" />
                        </form>
                         
@@ -144,7 +157,6 @@
                             <select class ="modify_model" id = "salesmen1">
                                 <option>选择对应销售</option>
                             </select><br/><br/>
-                            <input type="text" class="form-control" placeholder="请输入要添加人员的姓名" /><br>
                             <input type="text" class="form-control" placeholder="请输入要添加人员的用户名" />
                        </form>
                         
